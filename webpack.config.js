@@ -12,7 +12,7 @@ module.exports = {
     extensions: ['.ts', '.js']
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, 'dist'),
     open: true
   },
   module: {
