@@ -1,26 +1,27 @@
-const path = require('path');
-
 module.exports = {
   entry: {
-    bundle: './src/index.ts'
+    bundle: "./src/index.ts"
   },
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].js'
+    path: `${__dirname}/dist`,
+    filename: "[name].js",
   },
+  mode: "development",
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: [".ts", ".js"],
   },
   devServer: {
-    static: path.join(__dirname, 'dist'),
-    open: true
+    static: {
+      directory: `${__dirname}/dist`,
+    },
+    open: true,
   },
   module: {
     rules: [
       {
-        loader: 'ts-loader',
-        test: /\.ts$/
+        test: /\.ts$/,
+        loader: "ts-loader",
       }
     ]
   }
-}
+};
